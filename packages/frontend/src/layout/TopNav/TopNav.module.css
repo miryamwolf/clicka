@@ -1,0 +1,198 @@
+/* .topNav {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px 20px;
+  direction: rtl;
+  position: sticky; /* הוסף את זה */
+  /* top: 0; /* הוסף את זה */
+  /* z-index: 1000;  */
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.navItem {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  transition: border-bottom 0.2s ease;
+}
+
+.navGroup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  padding: 8px 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color: rgb(4, 4, 4);
+  gap: 3px;
+  outline: none;
+  border-bottom: 3px solid transparent;
+  caret-color: transparent
+}
+
+.navButton:focus {
+  outline: none;
+}
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  background-color: #333;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 4px;
+  min-width: 150px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.dropdown li {
+  padding: 8px 16px;
+  white-space: nowrap;
+  color: white;
+  caret-color: transparent
+}
+
+.dropdownWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown li:hover {
+  background-color: #555;
+}
+
+.hamburgerButton {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  z-index: 1000;
+  caret-color: transparent
+}
+
+.activeLink .navButton {
+  border-bottom: 3px solid white;
+}
+
+
+@media (max-width: 990px) {
+  .topNav {
+    background-color: transparent;
+    padding: 0;
+  }
+} 
+.topNav {
+  background-color: white;
+  color: #1a1a1a;
+  padding: 16px;
+  direction: rtl;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  height: 50px;
+  margin-left: 24px;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.navGroup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  gap: 8px;
+  border-radius: 12px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.navButton:hover {
+  background-color: #e1ebff;
+  color: #0a58ca;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  border-radius: 12px;
+  min-width: 160px;
+  z-index: 10;
+}
+
+.dropdown li {
+  padding: 10px 16px;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown li:hover {
+  background-color: #f2f7ff;
+  color: #0a58ca;
+  cursor: pointer;
+}
+
+.hamburgerButton {
+  background: none;
+  border: none;
+  color: #1a1a1a;
+  font-size: 24px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 50px;
+}

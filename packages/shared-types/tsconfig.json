@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "types": ["node"],
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "rootDir": ".",
+    "outDir": "dist",
+    "module": "CommonJS",
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "composite": true,
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
+  },
+  // "include": [ "core.ts", "customer.ts", "google.ts", "language.ts", "mapCoordinates.ts", "occupancy.ts", "report.ts", "spaceAssignment.ts", "workspaceMap.ts"]
+"include": ["*.ts"],
+"exclude": ["dist", "node_modules"]
+}

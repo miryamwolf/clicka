@@ -1,0 +1,659 @@
+*{
+   box-sizing: border-box;
+   text-align: center;
+}
+h1{
+ text-align: center;
+  color: #007BFF;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 10px 0;
+  border-bottom: 2px solid #007BFF;
+  width: 100%;
+}
+h2{
+  text-align: center;
+  color: #007BFF;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 0;
+  border-bottom: 2px solid #007BFF;
+  width: 100%;   
+}
+h1 ::after{
+    background-color: #007BFF;
+}
+.all{
+    height: 91vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content{
+    height: 80%;
+    width: 80%;
+    background-color:white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px rgb(224, 224, 224);
+    padding: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: stretch;
+     box-sizing: border-box;
+}
+.search{
+   width: 20%;
+   /* height: 100%; */
+   min-width: 250px;
+   flex-shrink: 0;
+   display: flex;
+    flex-direction: column;
+box-sizing: border-box;
+ border: 1px solid transparent;
+}
+.search > :last-child {
+    margin-top: auto; 
+}
+.workspaceMap {
+    position: relative;
+    flex: 1;
+    width: calc(100% - 270px);
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+ .toggleSidebarBtn {
+   position: absolute;
+    right: 30px;
+    top: 90px;
+    z-index: 1001; 
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .toggleSidebarBtn:hover {
+    background: #f8f9fa;
+}
+.workspaceMap.fullWidth {
+    width: 100%;
+    flex: 1;
+}
+
+.content.sidebarHidden {
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.content.sidebarHidden .workspaceMap {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.content.sidebarHidden .zoom {
+    margin-left: 0;
+}
+.search.hidden {
+    display: none;
+}
+
+.displayOrHiddenMenu {
+    margin-bottom: 10px;
+}
+.zoom {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    pointer-events: none;
+    margin-left: calc(50vw - 50%); 
+}
+
+.zoom-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border: 1px solid #d1d5db;
+    pointer-events: auto;
+}
+
+.zoom-btn {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #374151;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoom-btn:hover:not(:disabled) {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.zoom-btn:disabled {
+    color: #d1d5db;
+    cursor: not-allowed;
+}
+
+.reset-btn {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #374151;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reset-btn:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.zoom-slider {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.slider {
+    width: 80px;
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: #3b82f6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: #3b82f6;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.zoom-value {
+    font-size: 11px;
+    color: #6b7280;
+    min-width: 35px;
+    text-align: center;
+}
+.svg-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+   padding: 5px;
+   box-sizing: border-box;
+}
+.mapContent {
+  width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    min-width: 90% !important;
+    min-height: 90% !important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    transform-origin: center center !important;/* שמור על יחס גובה-רוחב */
+}
+
+.spaces {
+  width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     box-sizing: border-box;
+}
+
+.room-space {
+    fill: #b0c4de !important; /* צבע כחול-אפור לדוגמה */
+    stroke: #333;
+    stroke-width: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+/* תצוגת מסך מלא – כשהתפריט מוסתר */
+.content.sidebarHidden .spaces {
+    justify-content: center;
+    align-items: center;
+     margin-right: 0;
+}
+
+.space-rect {
+    transition: opacity 0.3s ease; /* אנימציה חלקה */
+}
+
+/* חלל זמין - ירוק */
+.space-rect.AVAILABLE {
+    fill: #caf9d5;
+}
+
+/* חלל תפוס - אדום */
+.space-rect.OCCUPIED {
+    fill: #f6c1bd;
+}
+
+/* חלל שמור - כתום */
+.space-rect.RESERVED {
+    fill: #f7d6a5;
+}
+
+/* חלל בתחזוקה - סגול */
+.space-rect.MAINTENANCE {
+    fill: #eff4c3;
+}
+
+/* חלל לא פעיל - אפור */
+.space-rect.INACTIVE {
+    fill: #969696;
+}
+
+/* כשהחלל לא מודגש בחיפוש - אפור בהיר */
+.space-rect[opacity="0.3"] {
+    fill: #cccccc !important;
+}
+
+/* אפקט hover */
+.space-rect:hover {
+    stroke-width: 3;
+    filter: brightness(1.1);
+}
+
+/* רקע לחללים שאינם להשכרה (NONE status) */
+.space-rect.NONE {
+    fill: #f8f9fa;
+    stroke: #dee2e6;
+    stroke-width: 1;
+    opacity: 0.8;
+}
+
+/* עיצוב особל דלתות - פסים אלכסוניים */
+.space-rect.door {
+    fill: url(#doorPattern);
+    stroke: #6c757d;
+    stroke-width: 2;
+}
+
+/* עיצוב לקירות */
+.space-rect.wall {
+    fill: #343a40;
+    stroke: #212529;
+    stroke-width: 1;
+}
+
+/* רקע לשירותים */
+.space-rect.bathroom {
+    fill: #e3f2fd;
+    stroke: #1976d2;
+    stroke-width: 2;
+}
+
+/* רקע למטבח */
+.space-rect.kitchen {
+    fill: #fff3e0;
+    stroke: #f57c00;
+    stroke-width: 2;
+}
+
+/* אפקט זוהר לטקסט של לקוח */
+.space-rect.OCCUPIED + .customer-name {
+    filter: drop-shadow(0 0 3px #ffeb3b);
+}
+.sidebarHidden .spaces {
+    margin-right: 0; /* ביטול מרווח ימני */
+    border-radius: 10px; /* תואם לעיצוב הכללי */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* שמירה על גבול */
+    padding: 0; /* תואם לעיצוב הכללי */
+}
+
+/* עיצוב לשם הלקוח */
+.customer-name {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    font-weight: bold;
+}
+/* אפקט זוהר לטקסט של לקוח */
+.space-rect.OCCUPIED + .customer-name {
+    filter: drop-shadow(0 0 3px #ffeb3b);
+}
+.space-icon {
+    font-family: 'Segoe UI Symbol', 'Arial Unicode MS', sans-serif !important;
+    font-size: 32px !important;
+    fill: #333 !important;
+    text-anchor: middle !important;
+    dominant-baseline: middle !important;
+    font-weight: bold !important;
+}
+.space-icon.small {
+    font-size: 20px;
+}
+.space-icon.large {
+    font-size: 40px;
+}
+.space
+.customer-name {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    font-weight: bold;
+}
+.statusAndType{
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 20px;
+  border-radius: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  min-width: 250px;
+}
+.displayDate{
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 20px;
+  border-radius: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  min-width: 250px;
+}
+.clearSearchBtn,.backBtn {
+ margin-top: 20px;
+ margin-top: 20px;
+  background-color: #007BFF !important;
+  color: white !important;
+  border-color: #6c757d !important;
+  width: 100%;
+}
+.clearSearchBtn:hover,.backBtn:hover {
+    /* background-color: #0056b3 !important;
+    color: white !important;
+    border-color: #0056b3 !important; */
+    box-shadow: 0 2px 4px rgba(255, 136, 0, 0.2) !important;
+}
+
+
+
+.room-space {
+    fill: var(--space-fill, #f8f9fa);
+    stroke: #333;
+    stroke-width: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.room-space:hover {
+    stroke-width: 3;
+    filter: brightness(1.1);
+}
+
+/* עמדות בחדרים */
+.room-workstation {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.room-workstation:hover {
+    filter: brightness(1.1);
+}
+
+/* סטטוסים לחדרים - זהה לחללים */
+/* .room-space.AVAILABLE,
+.room-workstation.AVAILABLE {
+    --space-fill: #d4edda;
+    fill: #d4edda;
+} */
+
+/* .room-space.OCCUPIED,
+.room-workstation.OCCUPIED {
+    --space-fill: #f8d7da;
+    fill: #f8d7da;
+} */
+
+.room-space.MAINTENANCE,
+.room-workstation.MAINTENANCE {
+    --space-fill: #fff3cd;
+    fill: #fff3cd;
+}
+
+.room-space.NONE,
+.room-workstation.NONE {
+    --space-fill: #e2e3e5;
+    fill: #e2e3e5;
+}
+
+/* אם יש סוגי חדרים מיוחדים */
+.room-space.bathroom,
+.room-workstation.bathroom {
+    --space-fill: #cce5ff;
+    fill: #cce5ff;
+}
+
+.room-space.kitchen,
+.room-workstation.kitchen {
+    --space-fill: #ffe6cc;
+    fill: #ffe6cc;
+}
+.toggleSidebarBtn{
+position: absolute;
+right: 30px;
+top: 90px;
+}
+
+/* תצוגה רספונסיבית*/
+@media (max-width: 1200px) {
+  .content {
+    width: 95%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    min-width: auto;
+
+  }
+  
+  .workspaceMap {
+    width: 100%;
+    height: 60vh;
+    flex: 1;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .all {
+    height: 100vh;
+    padding: 10px;
+  }
+  
+  .content {
+    width: 100%;
+    height: 90vh;
+    padding: 5px;
+    gap: 5px;
+  }
+  
+  .search {
+    padding: 10px;
+  }
+  
+  .statusAndType, .displayDate {
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    min-width: 250px;
+    flex-shrink: 0; 
+    box-sizing: border-box;
+  }
+  
+  .workspaceMap {
+    height: 70vh;
+  }
+  
+  .zoom {
+    bottom: 5px;
+    margin-left: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+  
+  .zoom-controls {
+    padding: 4px 8px;
+    gap: 4px;
+  }
+  
+  .zoom-btn, .reset-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+  
+  .slider {
+    width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+    padding: 5px 0;
+  }
+  
+  h2 {
+    font-size: 0.9rem;
+    padding: 5px 0;
+  }
+  
+ 
+  .minimap {
+    width: 150px;
+    height: 75px;
+    top: 60px;
+    left: 10px;
+  }
+  
+  .workspaceMap {
+    height: 65vh;
+  }
+  
+  .zoom {
+    transform: translateX(-50%) scale(0.7);
+  }
+}
+
+/* שיפור התצוגה במסכים קטנים */
+.content.sidebarHidden {
+  padding: 5px;
+}
+
+.content.sidebarHidden .workspaceMap {
+  height: calc(100vh - 120px);
+}
+
+/* הוספת גמישות לטקסט במפה */
+.space-text {
+  font-size: clamp(8px, 1vw, 12px);
+}
+
+/* שיפור התצוגה של הכפתורים במסכים קטנים */
+.clearSearchBtn, .backBtn {
+  margin-top: auto;
+  width: 100%;
+    margin-bottom: 10px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+.clearSearchBtn:hover, .backBtn:hover {
+    box-shadow: 0 2px 4px rgba(255, 136, 0, 0.2) !important;
+}
+
+@media (max-width: 480px) {
+  .clearSearchBtn, .backBtn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

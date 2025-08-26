@@ -1,0 +1,248 @@
+/* ===== כללי בסיס ===== */
+.fc {
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* ===== עיצוב כפתורים מקורי ===== */
+.fc-button {
+  background-color: #007BFF !important;
+  border: 1px solid #007BFF !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  padding: 8px 16px !important;
+  transition: all 0.2s ease !important;
+}
+
+.fc-button:hover {
+  background-color: #a5d8ff !important;
+  border-color: #007BFF !important;
+  color: #007BFF !important;
+}
+
+.fc-button:focus {
+  box-shadow: 0 0 0 3px #a5d8ff !important;
+  outline: none !important;
+}
+
+/* ===== עיצוב כותרות הימים ===== */
+.fc-col-header-cell {
+  background: #F8F9FA !important;
+  color: #007BFF !important;
+  font-weight: 600 !important;
+  padding: 16px 12px !important; /* גובה / ריווח פנימי מקורי */
+  font-size: 14px !important;
+  text-align: center !important;
+  border-right: 3px solid #e5e7eb !important;
+  border-left: 3px solid #e5e7eb !important;
+}
+
+/* ===== שיפור כותרות ימים Cushion ===== */
+.fc-col-header-cell-cushion {
+  padding: 16px 12px !important;
+  font-weight: 600 !important;
+  color: #007BFF !important;
+}
+
+
+/* ===== כלל גובה מאוחד לכל התאים - 60px ===== */
+.fc-timegrid-slot {
+  height: 60px !important;
+  min-height: 60px !important;
+}
+
+/* ===== כלל גבולות מאוחד לכל העמודות - 3px ===== */
+.fc-timegrid-col,
+.fc-timegrid-axis,
+.fc-col-header-cell {
+  border-right: 3px solid #e5e7eb !important;
+  border-left: 3px solid #e5e7eb !important;
+}
+
+/* ===== עיצוב היום הנוכחי - מרוכז ומאוחד ===== */
+.fc-day-today {
+  background-color: #e0f2fe !important; /* רקע השעות תכלת */
+}
+
+.fc-col-header-cell.fc-day-today {
+  background-color: #007BFF !important; /* רקע כחול */
+}
+
+.fc-col-header-cell.fc-day-today .fc-col-header-cell-cushion {
+  color: #ffffff !important; /* כיתוב לבן */
+  font-weight: 700 !important;
+}
+
+/* ===== שאר העיצוב המקורי ===== */
+.fc-toolbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.fc-col-header-cell-cushion {
+  padding: 8px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.fc-timegrid-slot-label-cushion {
+  padding: 4px 8px;
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.fc-event {
+  border-radius: 6px;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fc-event:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fc-event-title {
+  padding: 2px 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fc-event-time {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  padding: 0 6px;
+}
+
+.booking-status-pending {
+  background-color: #fbbf24;
+  color: #92400e;
+}
+
+.booking-status-approved {
+  background-color: #10b981;
+  color: #065f46;
+}
+
+.booking-status-rejected {
+  background-color: #ef4444;
+  color: #991b1b;
+}
+
+.booking-status-canceled {
+  background-color: #6b7280;
+  color: #374151;
+}
+
+.booking-status-completed {
+  background-color: #3b82f6;
+  color: #1e40af;
+}
+
+.fc-button {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.fc-button:hover {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.fc-button:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.fc-button-active {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.fc-non-business {
+  background-color: #f9fafb;
+}
+
+.fc-highlight {
+  background-color: rgba(59, 130, 246, 0.2);
+  border: 2px dashed #3b82f6;
+}
+
+.fc-scrollgrid {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.fc-timegrid-divider {
+  border-top: 2px solid #e5e7eb;
+}
+
+@media (max-width: 768px) {
+  .fc-toolbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .fc-toolbar-chunk {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .fc-timegrid-slot {
+    height: 50px !important;
+    min-height: 50px !important;
+  }
+  
+  .fc-event {
+    font-size: 0.75rem;
+  }
+  
+  .fc-timegrid-slot-label-cushion {
+    font-size: 0.75rem;
+    padding: 2px 4px;
+  }
+}
+
+.fc-event {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fc-timegrid-event {
+  margin: 1px 2px;
+}
+
+.fc-timegrid-event-harness {
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.fc-direction-rtl .fc-timegrid-col-events {
+  margin: 0 2px 0 0;
+}
+
+.fc-direction-rtl .fc-timegrid-event {
+  margin-right: 0;
+  margin-left: 2px;
+}

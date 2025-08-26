@@ -1,0 +1,2 @@
+// core.d.ts
+export {};
